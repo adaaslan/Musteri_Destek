@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <h:outputStylesheet>
+
+        .capitalized {
+        text-transform: upper;
+        }
+    </h:outputStylesheet>
+
+    <div class="sidebar" data-color="gray">
+            <!-- 	<div class="sidebar" data-color="gray" data-image="#{request.contextPath}/resources/lbd/img/shutterstock_356361521.jpg"> -->
+
+        <!-- using: data-color="blue | azure | green | orange | red | purple"    -->
+
+        <div class="sidebar-wrapper">
+            <div class="logoo">
+                <a href="#" class="simple-text"> <img src="#{request.contextPath}/resources/lbd/img/infina-logo-dark.png" />
+                </a>
+            </div>
+
+            <ul class="nav">
+            <!-- 	<li><h:outputLink styleClass="menu" value="#{request.contextPath}/view/guncelBildirim.xhtml" onclick="clearMsgs()">
+                                    <i class="pe-7s-note2"></i>
+                                    <p>GÜNCEL BİLDİRİMLER</p>
+                            </h:outputLink></li> -->
+                <li><h:outputLink styleClass="menu" value="#{request.contextPath}/view/talepGiris.xhtml">
+                        <i class="pe-7s-search"></i>
+                        <p>Talep Giriş</p>
+                    </h:outputLink></li>
+                <li><h:outputLink styleClass="menu" value="#{request.contextPath}/view/talepTakip.xhtml">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Talep Takip</p>
+                    </h:outputLink></li>
+                <li><h:outputLink styleClass="menu" value="#{request.contextPath}/view/uyeTakip.xhtml">
+                        <i class="pe-7s-display2"></i>
+                        <p>Üye Takip</p>
+                    </h:outputLink></li>
+                <li class="active-user"><h:commandLink styleClass="menu">
+                        <i class="pe-7s-user"></i>
+                        <p>#{user.eposta}</p>
+                    </h:commandLink></li>
+            </ul>
+        </div>
+    </div>
+
+</ui:composition>

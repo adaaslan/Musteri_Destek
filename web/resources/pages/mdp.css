@@ -1,0 +1,93 @@
+.ui-widget {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif !important;
+    font-size: 1em;
+}
+
+.ui-autocomplete-multiple-container.ui-inputfield {
+    padding: 0;
+    border: none;
+    width: 100%
+}
+
+.ui-autocomplete-multiple-container.ui-inputfield.ui-state-focus {
+    padding: 0;
+    border: none;
+    width: auto !important;
+}
+
+.ui-autocomplete-input-token input {
+    width: 100% !important;
+}
+
+.ui-inputfield.ui-state-focus {
+    box-shadow: none !important;
+}
+
+.fileUploadBtn {
+    color: #fff !important;
+    background-color: #6d5cae !important;
+    border-color: #6d5cae !important;
+}
+
+.iconx i {
+    font-size: 52px;
+    text-align: center;
+    height: 56px;
+    width: 56px;
+    background: #d5283b;
+    color: #fff;
+}
+
+.open>.dropdown-menu {
+    display: block;
+}
+
+.label-critical {
+    background-color: #d43e3a;
+    border-color: #d43e3a;
+    color: #fff;
+    box-shadow: none
+}
+
+.duzPanel {
+    border: 0px solid #ddd;
+    background: #fff;
+    margin-left: -15px;
+}
+
+.ui-state-disabled>span {
+    opacity: 0.3 !important;
+    filter: alpha(opacity = 30);
+}
+
+.header {
+    padding: 0 0 0 0 !important;
+}
+
+.horizontal-app-menu .menu-bar>ul li>a {
+    color: #000;
+    /*color: #9fa5b3;
+            color: #b4b5b9 ; */
+}
+
+.horizontal-app-menu .menu-bar>ul li>a.active {
+    /* 	color: #4f5151; */
+    border-bottom: 2px solid #696b6b;
+}
+
+.horizontal-app-menu .menu-bar>ul li>a:hover {
+    color: #0090d9;
+    /* color: #4f5151;*/
+}
+
+/* .cardHeight { */
+/* 	min-height: -webkit-fill-available; */
+/* } */ kaydirma yapiyor dayfada
+
+.form-group-default.focused {
+    border-color: rgba(0, 0, 0, 0s) !important;
+    background-color: #ffffff !important;
+    color: #333 !important;
+}

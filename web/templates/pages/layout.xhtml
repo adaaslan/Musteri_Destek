@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" >
+    <h:head>
+        <f:facet name="first">
+            <meta lang="tr" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+            <meta name="description" content="İnfina Destek" />
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+            <meta name="apple-touch-fullscreen" content="yes" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+            <meta content="" name="description" />
+            <meta content="" name="author" />
+            <title>Müşteri Destek</title>
+        </f:facet>
+        <f:facet name="middle">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600" />
+            <h:outputStylesheet name="pages/css/font-awesome.css" />
+            <h:outputStylesheet name="pages/css/select2.min.css" />
+            <h:outputStylesheet name="pages/css/switchery.min.css" />
+            <h:outputStylesheet name="pages/css/rickshaw.min.css" />
+            <h:outputStylesheet name="pages/css/dataTables.bootstrap.min.css" />
+            <h:outputStylesheet name="pages/css/datatables.responsive.css" />
+            <h:outputStylesheet name="pages/css/dashboard.widgets.css" />
+            <h:outputStylesheet name="pages/css/simple-line-icons.css" />
+            <h:outputStylesheet name="pages/css/pace-theme-flash.css" />
+            <h:outputStylesheet name="pages/css/bootstrap.min.css" />
+            <h:outputStylesheet name="pages/css/pages-icons.css" />
+            <h:outputStylesheet name="pages/css/pages.css" />
+            <h:outputStylesheet name="pages/css/table.css" />
+            <h:outputStylesheet name="pages/css/c.css" />
+        </f:facet>
+        <f:facet name="last">
+            <h:outputScript name="custom/js/bootstrap-notify.js" />
+            <h:outputScript name="custom/js/fpp.js" />
+        </f:facet>
+    </h:head>
+    <!-- <h:body styleClass="fixed-header horizontal-menu horizontal-app-menu "> -->
+    <h:body styleClass="horizontal-menu horizontal-app-menu ">
+        <f:view >
+            <h:form id="appForm" style="height: 100%" enctype="multipart/form-data">
+                <p:outputPanel id="baslik">
+                    <ui:include src="header.xhtml" />
+                </p:outputPanel>
+                <div class="page-container ">
+                    <div class="page-content-wrapper ">
+                        <div class="content sm-gutter">
+                            <div class="container sm-padding-10 no-padding">
+                                <p:outputPanel styleClass="content " id="container">
+                                    <ui:insert name="content-header" />
+                                    <ui:insert name="content" />
+                                    <p:growl id="growl" sticky="false" life="10000" redisplay="false" widgetVar="growlWgt" showDetail="true" escape="false">
+                                        <p:autoUpdate />
+                                    </p:growl>
+                                </p:outputPanel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+        </f:view>
+    </h:body>
+    <h:outputScript name="pages/js/bootstrap.min.js" />
+    <h:outputScript name="pages/js/pages.min.js" />
+    <h:outputScript name="pages/mdp.js" />
+    <h:outputStylesheet name="pages/mdp.css" />
+    <h:outputStylesheet name="pages/fpp.css" />
+</html>

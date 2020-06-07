@@ -1,0 +1,703 @@
+.edittextarea {
+    width: 100%;
+    resize: vertical;
+    margin: 0;
+    padding: 2px;
+}
+
+.ui-state-highlight {
+    background: #2399e5 !important;
+}
+
+.grid {
+    position: relative;
+}
+
+.item {
+    display: block;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    z-index: 1;
+    background: #000;
+    color: #fff;
+}
+
+.item.muuri-item-dragging {
+    z-index: 3;
+}
+
+.item.muuri-item-releasing {
+    z-index: 2;
+}
+
+.item.muuri-item-hidden {
+    z-index: 0;
+}
+
+.item-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#appForm:datatable:paginationPanel {
+    font-size: 0.8em;
+}
+
+.ui-state-disabled>span {
+    opacity: 0.3 !important;
+    filter: alpha(opacity = 30);
+}
+
+.ui-icon-disabled {
+    opacity: 0.1 !important;
+    filter: alpha(opacity = 10);
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 7px !important;
+    padding-left: 7px !important;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    /*     padding: 1px 2px;
+    */
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+        ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+        .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+table tr.selected {
+    background-color: #7e9cab73 !important;
+    /* 	background-color: #7e9cab !important;*/
+    vertical-align: middle;
+    padding: 1.5em;
+    color: white;
+}
+
+table tr.notified {
+    background-color: red !important;
+    /* 	background-color: #7e9cab !important;*/
+    vertical-align: middle;
+    padding: 1.5em;
+    color: white;
+}
+
+.alert-red {
+    color: #ffffff;
+    background-color: #d5283b;
+    border-color: #d5283b;
+    opacity: 0.9;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity = 20);
+    opacity: .8;
+}
+
+.close:hover, .close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity = 50);
+    opacity: .5;
+}
+
+.tableTr {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.tableTrSelectable {
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.not-active {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: black;
+}
+
+.ui-widget-header {
+    /**bu ui-timer dan once olmal�!! */
+    border: 1px solid #e3a1a1;
+    background: #909698;
+    color: #F44336;
+    font-weight: bold;
+}
+
+.ui-widget {
+    font: 400 14px/1.6 'Open Sans', Verdana, Helvetica, sans-serif
+        !important;
+}
+
+/* .ui-widget-content a {
+    color: #ffffff; 
+} */
+.ui-selectonemenu .ui-selectonemenu-trigger {
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    cursor: pointer !important;
+    width: 30px !important;
+    height: 100% !important;
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    /* padding: 0 3px; */
+}
+
+.selectMenu {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.selectMenu .ui-selectonemenu-label.ui-inputfield.ui-corner-all {
+    padding-right: 22px !important;
+}
+
+ui-button-text ui-c {
+    font-weight: 900 !important;
+}
+
+.ui-button-text-only .ui-button-text {
+    padding: .3em 1em;
+    font-weight: 900;
+}
+
+/*.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+        {
+        border: 1px solid #eeeeee;
+        background: #607D8B;
+        font-weight: bold;
+        color: #ffffff;
+}*/
+
+/* .btn-primary {
+        color: #ffffff;
+        background-color: #e74c3c;
+        border-color: #df2e1b;
+} */
+.btn-danger {
+    color: #fff;
+    background-color: #d5283b !important;
+    border-color: #d5283b;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #ac2925;
+    border-color: #ac2925;
+}
+
+.btn-danger.active.focus, .btn-danger.active:focus, .btn-danger.active:hover,
+.btn-danger:active.focus, .btn-danger:active:focus, .btn-danger:active:hover,
+.open>.dropdown-toggle.btn-danger.focus, .open>.dropdown-toggle.btn-danger:focus,
+.open>.dropdown-toggle.btn-danger:hover {
+    color: #fff;
+    background-color: #d5283b;
+    border-color: #d2433f;
+}
+
+table td {
+    font-weight: 530;
+}
+
+.ui-timer {
+    padding: 2px 5px;
+    color: red;
+    background: #ffffff;
+    border-color: #ffffff;
+    font: 600 14px/1.6 'Open Sans', Verdana, Helvetica, sans-serif
+        !important;
+}
+
+.onaylaBtn {
+    color: #171717;
+    background: #ffffff;
+    border: 2px solid #9E9E9E;
+    padding: 0px 12px;
+}
+
+.onaylaBtn:hover {
+    color: white;
+    background: #4CAF50;
+}
+
+.revizeBtn {
+    color: #171717;
+    background: #ffffff;
+    border: 2px solid #9E9E9E;
+    padding: 0px 12px;
+}
+
+.revizeBtn:hover {
+    color: white;
+    background: #f0ad4e;
+}
+
+.column1 {
+    width: 1px;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 80%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.navbar .navbar-nav .notification {
+    position: absolute;
+    background-color: #FB404B;
+    text-align: center;
+    border-radius: 10px;
+    min-width: 18px;
+    padding: 0 5px;
+    height: 18px;
+    font-size: 15px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 18px;
+    top: 10px;
+    left: 7px;
+}
+
+.aui-icon-small {
+    height: 16px;
+    width: 16px;
+}
+
+.aui-icon-small, .aui-icon-large {
+    line-height: 0;
+    position: relative;
+    vertical-align: text-top;
+}
+
+.aui-icon {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    border: none;
+    display: inline-block;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-indent: -999em;
+    vertical-align: text-bottom;
+    width: 16px;
+}
+
+.aui-iconfont-edit:before {
+    content: "\f142";
+}
+
+.aui-icon-small:before {
+    font-size: 16px;
+    margin-top: -8px;
+}
+
+.aui-icon-small:before, .aui-icon-large:before {
+    color: inherit;
+    font-family: "Atlassian Icons";
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    left: 0;
+    line-height: 1;
+    position: absolute;
+    text-indent: 0;
+    speak: none;
+    top: 50%;
+}
+
+.editable-field {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: box-shadow 150ms ease-in 0ms;
+    transition: box-shadow 150ms ease-in 0ms;
+    border-radius: 2.01px;
+    cursor: text;
+    display: inline-block;
+    max-width: 100%;
+    box-shadow: 0 0 0 0 transparent;
+    padding: 2px 30px 2px 5px;
+    position: relative;
+    vertical-align: top;
+    word-break: break-word
+}
+
+.editable-field:hover, .editable-field.saving {
+    box-shadow: 0 0 0 1px #ccc
+}
+
+.editable-field:hover .overlay-icon, .editable-field.saving .overlay-icon
+{
+    opacity: 1;
+    z-index: auto
+}
+
+.editable-field:hover {
+    background-color: #fff
+}
+
+.editable-field:hover .overlay-icon {
+    -webkit-transition: opacity 150ms ease-in 0ms;
+    transition: opacity 150ms ease-in 0ms
+}
+
+.editable-field.saving .save-options, .editable-field.saving .field-tools
+{
+    display: none
+}
+
+.editable-field.saving form.aui .field-group .aui-ss-icon.drop-menu,
+.editable-field.saving form.aui .field-group .aui-ss-field {
+    border-bottom-right-radius: 3.01px
+}
+
+.editable-field.active {
+    background-color: #fff;
+    display: block !important;
+    box-shadow: 0 0 0 0 transparent
+}
+
+.editable-field.active .overlay-icon {
+    opacity: 0;
+    z-index: -1
+}
+
+.editable-field.active.saving .overlay-icon {
+    opacity: 1;
+    z-index: auto
+}
+
+.editable-field.active .save-options .aui-button, .editable-field.active .save-options .aui-button.cancel
+{
+    height: 24px;
+    padding: 0 4px
+}
+
+.editable-field.type-radiobuttons.active form.aui, .editable-field.type-multicheckboxes.active form.aui
+{
+    border: 1px solid #ccc;
+    padding: 4px 5px
+}
+
+.editable-field.type-cascadingselect form.aui .inline-edit-fields select
+{
+    width: 49%
+}
+
+.editable-field.type-cascadingselect form.aui .inline-edit-fields select+select
+{
+    float: right
+}
+
+.editable-field.type-locationtextfield, .editable-field.type-locationselect
+{
+    display: block
+}
+
+.editable-field .overlay-icon {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    opacity: 0;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+    border-left: 1px solid #ccc;
+    bottom: 0;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    z-index: -1
+}
+
+.editable-field .overlay-icon.aui-iconfont-edit {
+    color: #707070;
+    cursor: pointer
+}
+
+.editable-field .overlay-icon.aui-iconfont-edit:before {
+    top: 12px;
+    left: 3px
+}
+
+.editable-field .save-options {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 3px 6px rgba(111, 111, 111, 0.2);
+    outline: none;
+    padding: 3px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1
+}
+
+.editable-field .save-options .aui-button+.aui-button {
+    margin-left: 3px
+}
+
+.editable-field .save-options .aui-button .aui-iconfont-success {
+    color: #707070
+}
+
+.editable-field .save-options .aui-button .aui-iconfont-success:before {
+    font-size: 14px;
+    left: 1px;
+    margin-top: -7px
+}
+
+.editable-field .save-options .aui-button .aui-iconfont-close-dialog {
+    color: #707070
+}
+
+.editable-field .save-options .aui-button:hover .aui-iconfont-success,
+.editable-field .save-options .aui-button:focus .aui-iconfont-success {
+    color: #333
+}
+
+.editable-field .save-options .aui-button:hover .aui-iconfont-close-dialog,
+.editable-field .save-options .aui-button:focus .aui-iconfont-close-dialog
+{
+    color: #333
+}
+
+.editable-field form.aui {
+    margin: -2px -30px -2px -5px
+}
+
+.editable-field form.aui .group, .editable-field form.aui .field-group {
+    clear: none;
+    margin: 0;
+    padding: 0
+}
+
+.editable-field form.aui .group:after, .editable-field form.aui .field-group:after
+{
+    clear: none
+}
+
+.editable-field form.aui .field-group .aui-ss, .editable-field form.aui .field-group .jira-multi-select,
+.editable-field form.aui .field-group .group, .editable-field form.aui .field-group input[type=text],
+.editable-field form.aui .field-group select, .editable-field form.aui .field-group textarea,
+.editable-field form.aui .field-group .text {
+    text-align: left;
+    vertical-align: top;
+    max-width: none;
+    width: 100%
+}
+
+.editable-field form.aui .field-group .drop-menu, .editable-field form.aui .field-group .jira-multi-select textarea,
+.editable-field form.aui .field-group .aui-ss-field {
+    border-bottom-right-radius: 0
+}
+
+.editable-field form.aui .field-group .inline-edit-error {
+    background-color: #d04437;
+    clear: both;
+    color: #fff;
+    font-weight: normal;
+    margin: 0;
+    padding: 5px
+}
+
+.editable-field form.aui .field-group+.field-group {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px
+}
+
+.editable-field form.aui .field-group+.field-group label {
+    display: inline;
+    color: #707070;
+    float: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto
+}
+
+.editable-field form.aui .field-group+.field-group label:after {
+    content: ": "
+}
+
+.editable-field form.aui .field-group+.field-group .field-value {
+    font-weight: normal;
+    padding: 0
+}
+
+.editable-field form.aui .aui-ss.aui-ss-has-entity-icon>.aui-ss-field {
+    padding-left: 23px
+}
+
+.editable-field form.aui .aui-ss>.aui-ss-entity-icon {
+    left: 5px
+}
+
+.editable-field form.aui .text, .editable-field form.aui .password,
+.editable-field form.aui .select {
+    height: 1.71429em;
+    line-height: 1;
+    padding: 4px 3px
+}
+
+.editable-field form.aui .select[multiple="multiple"] {
+    min-height: 6em
+}
+
+.editable-field form.aui .textarea {
+    padding: 2px 3px
+}
+
+.editable-field form.aui .select {
+    padding: 0
+}
+
+.editable-field form.aui .jira-multi-select>.representation .item-row {
+    padding: 1px 4px 1px 0
+}
+
+.editable-field form.aui .jira-multi-select>.representation .item-row>.value-item
+{
+    margin: 0
+}
+
+.editable-field form.aui .text, .editable-field form.aui .password,
+.editable-field form.aui .textarea, .editable-field form.aui .select,
+.editable-field form.aui .multi-select {
+    box-shadow: 0 1px 3px #e8e8e8 inset
+}
+
+.editable-field .text+a, .editable-field .textarea+a {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    height: 30px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    z-index: 1
+}
+
+.editable-field .text+a .aui-icon, .editable-field .textarea+a .aui-icon
+{
+    margin: 4px 0 0 3px
+}
+
+.editable-field .field-tools {
+    border-right: 1px solid #ccc;
+    display: inline-block;
+    margin: 0 10px 0 5px;
+    padding-right: 10px
+}
+
+.editable-field .field-tools a+a {
+    margin-left: 5px
+}
+
+.editable-field .wiki-edit-content.previewClass {
+    border: 1px solid #ccc;
+    padding: 10px
+}
+
+.editable-field .wiki-edit-content.previewClass .content-inner {
+    padding: 0
+}
+
+.editable-field .field-group>.help-lnk, .editable-field .edit-labels,
+.editable-field #assign-to-me-trigger, .editable-field .description {
+    display: none
+}
+
+/* .ui-widget-content { */
+/* 	border: 1px solid #ddd; */
+/* 	background: #eee 50% top repeat-x; */
+/* } */
+.duzPanel {
+    border: 0px solid #ddd;
+    background: #fff;
+    margin-left: -15px;
+}
+
+.whiteBackground {
+    background: #fff;
+}
+
+.ui-button-text-icon-left .ui-button-text {
+    padding: .1em .5em .1em 1.8em;
+}
+
+.marginLeft {
+    margin-left: 10px;
+}
+
+.marginLeft10 {
+    margin-left: 10px;
+}
+
+.marginTopEksi15 {
+    margin-top: -15px;
+}
+
+.kisaNavbar {
+    background: #1d66a0 !important;
+}
+
+.mainbar .mainbar-nav {
+    float: none;
+    margin-top: 5px;
+}

@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui" >
+    <ui:composition template="../templates/pages/layout.xhtml">
+        <ui:define name="content-header">
+            <div data-pages="parallax">
+                <div class=" container   container-fixed-lg">
+                    <div class="inner">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#{request.contextPath}/view/anasayfa.xhtml">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item active">Talepler</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+        <ui:define name="content">
+            <div class=" widget-11-2 card no-border card-condensed no-margin widget-loader-circle d-flex flex-column align-self-stretch">
+                <div class="card-body">
+                    <div class="auto-overflow widget-11-2-table">
+                        <h:dataTable id="datatable" styleClass="table" var="rowData" value="#{taleplerBean.taleplerList}" >
+                            <f:facet name="header">
+                                <h:selectOneMenu id="hizmetSec" value="#{taleplerBean.seciliHizmet}" converter="calisanlarConverter" >
+                                    <f:selectItems value="#{taleplerBean.hizmetler}" var="hizmet" itemLabel="#{hizmet.hizmet_adi}" itemValue="#{hizmet}" />
+                                    <p:ajax listener="#{taleplerBean.yenile()}" update="datatable" />
+                                </h:selectOneMenu>
+                                <p:inputText value="#{taleplerBean.bul}" placeholder="Konu Arayın" >
+                                    <p:ajax event="keyup" listener="#{taleplerBean.yenile()}" update="datatable" process="datatable" />
+                                </p:inputText>
+                                <p:panelGrid columns="6" id="paginationPanel" styleClass="pull-right" style="background:gray">
+                                    <h:outputText value=" (Toplam #{taleplerBean.totalCount} Kayıt)" />
+                                    <p:commandLink actionListener="#{taleplerBean.geri()}" process="datatable" update="datatable">
+                                        <span class="ui-icon ui-icon-seek-prev">P</span>
+                                    </p:commandLink>
+                                    <h:outputText value="#{taleplerBean.pageFirstItem + 1} .. #{taleplerBean.pageLastItem + 1}" />
+                                    <p:commandLink actionListener="#{taleplerBean.ileri()}"  process="datatable" update="datatable">
+                                        <span class="ui-icon ui-icon-seek-next">N</span>
+                                    </p:commandLink>
+                                </p:panelGrid>
+                            </f:facet>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Hizmet" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <h:outputText value="#{rowData.hizmet.hizmet_adi}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Talep" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <a href="#{request.contextPath}/view/talepDetay.xhtml?id=#{rowData.talep_id}" title="Detay için tıklayınız">#{rowData.talep_id}</a>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Konu" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <h:outputText value="#{rowData.talep_konu}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Mesaj" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <h:outputText value="#{rowData.talep_mesaj}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Durum" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <p:outputPanel rendered="#{rowData.talep_durum eq 'Açık'}">
+                                    <span class="label label-success">Açık</span>
+                                </p:outputPanel>
+                                <p:outputPanel rendered="#{rowData.talep_durum eq 'Kapalı'}">
+                                    <span class="label label-default">Kapalı</span>
+                                </p:outputPanel>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Oluşturulma Tarihi" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <h:outputText value="#{rowData.talep_tarih}">
+                                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                                </h:outputText>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Öncelik" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <p:outputPanel rendered="#{rowData.talep_oncelik eq 'Normal'}">
+                                    <span class="label label-success">Normal</span>
+                                </p:outputPanel>
+                                <p:outputPanel rendered="#{rowData.talep_oncelik eq 'Yüksek'}">
+                                    <span class="label label-danger">Yüksek</span>
+                                </p:outputPanel>
+                                <p:outputPanel rendered="#{rowData.talep_oncelik eq 'Kritik'}">
+                                    <span class="label label-critical">Kritik</span>
+                                </p:outputPanel>
+                            </h:column>
+                            <h:column >
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Takipçi" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <h:outputText value="#{rowData.calisan.calisan_ad} #{rowData.calisan.calisan_soyad}" />
+                            </h:column>
+                            <h:column  rendered="#{user.rol eq 'D'}">
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="Sil" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <p:commandLink action="#{taleplerBean.delete(rowData.talep_id)}" title="Talebi Sil"  update="datatable">
+                                    <span class="fa fa-trash" />
+                                </p:commandLink> 
+                            </h:column>
+                            <h:column  rendered="#{user.rol eq 'D'}">
+                                <f:facet name="header">
+                                    <h:panelGrid columns="2">
+                                        <h:outputText value="İşlemler" />
+                                    </h:panelGrid>
+                                </f:facet>
+                                <p:commandLink action="#{taleplerBean.durumKapat(rowData.talep_id)}" title="Talebi Kapat"  update="datatable">
+                                    Talebi Kapat
+                                </p:commandLink> 
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

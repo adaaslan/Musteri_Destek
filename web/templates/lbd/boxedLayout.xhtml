@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta lang="tr" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+            <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+            <meta name="description" content="İnfina KAP" />
+            <link rel="shortcut icon" type="image/png" href="#{request.contextPath}/resources/lbd/img/favicon.png" />
+
+            <title>INFINA DESTEK</title>
+        </f:facet>
+        <f:facet name="middle">
+            <!--     Fonts and icons     -->
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"></link>
+            <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css' />
+
+        </f:facet>
+        <f:facet name="last">
+            <h:outputScript name="kap.js" />
+            <!--   Core JS Files   -->
+            <h:outputScript name="lbd/js/bootstrap.min.js" />
+
+
+            <h:outputScript name="lbd/js/light-bootstrap-dashboard.js" />
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <script>
+                $(function () {
+                    $(".datepicker").datepicker({
+                        dateFormat: "dd.mm.yy"
+                    });
+                });
+            </script>
+        </f:facet>
+    </h:head>
+    <h:body styleClass="layout-boxed">
+        <f:view contentType="text/html; charset=UTF-8" locale="tr">
+            <h:form id="appForm" style="height: 100%">
+                <div class="wrapper">
+                    <ui:include src="leftMenu.xhtml" />
+
+
+                    <div class="main-panel">
+
+                        <ui:include src="header.xhtml" />
+
+                        <div class="content">
+                            <div class="container-fluid">
+                                <p:outputPanel styleClass="content" id="container">
+
+                                    <p:messages id="messages" showDetail="true" closable="true" autoUpdate="true" escape="false" />
+                                    <ui:insert name="content-header" />
+                                    <ui:insert name="content" />
+                                </p:outputPanel>
+                            </div>
+                        </div>
+
+
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <nav class="pull-left"></nav>
+                                <p class="copyright pull-right">
+                                    2017
+                                    <a href="http://www.infina.com.tr">INFINA</a>, Innovation For Finance
+
+                                </p>
+                            </div>
+                        </footer>
+
+                    </div>
+                </div>
+
+                <p:idleMonitor timeout="#{(session.maxInactiveInterval-600) * 1000}" onidle="logout();" />
+                <p:remoteCommand name="logout" actionListener="#{loginBean.logout()}" />
+
+            </h:form>
+            <!--  Checkbox, Radio & Switch Plugins -->
+            <h:outputScript name="lbd/js/bootstrap-checkbox-radio-switch.js" />
+
+            <!--  Charts Plugin -->
+            <h:outputScript name="lbd/js/chartist.min.js" />
+
+            <!--  Notifications Plugin    -->
+            <h:outputScript name="lbd/js/bootstrap-notify.js" />
+        </f:view>
+        <f:facet name="last">
+            <h:outputStylesheet name="lbd/css/light-bootstrap-dashboard.css" />
+            <h:outputStylesheet name="lbd/css/animate.min.css" />
+            <h:outputStylesheet name="lbd/css/bootstrap.min.css" />
+            <h:outputStylesheet name="lbd/css/pe-icon-7-stroke.css" />
+            <h:outputStylesheet name="lbd/css/kap.css" />
+        </f:facet>
+    </h:body>
+</html>

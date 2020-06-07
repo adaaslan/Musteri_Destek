@@ -1,0 +1,116 @@
+/*
+P.S: if you like my content maybe you will become a donator and donate some money? That helps me to create new awesome materials. https://www.paypal.me/melnik909
+*/
+
+.timeline{
+    --uiTimelineMainColor: var(--timelineMainColor, #222);
+    --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
+
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+.timeline__group{
+    position: relative;
+}
+
+.timeline__group:not(:first-of-type){
+    margin-top: 3px;
+}
+
+
+.timeline__box{
+    position: relative;
+}
+
+.timeline__box:not(:last-of-type){
+    margin-bottom: 3px;
+}
+
+.timeline__date{
+    min-width: 65px;
+    position: absolute;
+    left: 0;
+
+    box-sizing: border-box;
+    padding: .5rem 1.5rem;
+    text-align: center;
+
+    background-color: var(--uiTimelineMainColor);
+    color: var(--uiTimelineSecondaryColor);
+}
+
+.timeline__day{
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+}
+
+.timeline__month{
+    display: block;
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+.timeline__post{
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border-left: 3px solid var(--uiTimelineMainColor);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+    background-color: var(--uiTimelineSecondaryColor);
+}
+
+@media screen and (min-width: 641px){
+
+    .timeline:before{
+        left: 2px;
+    }
+
+    .timeline__group{
+        padding-top: 1px;
+    }
+
+    .timeline__box{
+        padding-left: 10px;
+    }
+
+    .timeline__box:before{
+        top: 20%;
+        transform: translateY(-50%);  
+    }  
+
+    .timeline__date{
+        top: 20%;
+        margin-top: -27px;
+    }
+}
+
+@media screen and (max-width: 640px){
+
+    .timeline:before{
+        left: 2px;
+    }
+
+    .timeline__group{
+        padding-top: 1px;
+    }
+
+    .timeline__box{
+        padding-left: 10px;
+    }
+
+    .timeline__box:before{
+        top: 90px;
+    }    
+
+    .timeline__date{
+        top: 0;
+    }
+}
+
+.timeline{
+    --timelineMainColor: #1d66a0;
+    font-size: 15px;
+}
+
+

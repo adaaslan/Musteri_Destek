@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <ui:composition template="../templates/pages/layout.xhtml">
+        <ui:define name="content-header">
+            <div data-pages="parallax">
+                <div class=" container   container-fixed-lg">
+                    <div class="inner">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#{request.contextPath}/view/anasayfa.xhtml">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item active">Talep Girişi</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+        <ui:define name="content">
+<!--            <h:outputStylesheet> 
+                .column1 { width: 300px; }
+                .column2 { width: 500px; }
+
+                .ui-fileupload-filename {
+                display:block;
+                float:left !important;
+                }
+                body .ui-fileupload .ui-fileupload-buttonbar {
+                background: transparent none;
+                border: none;	 		
+                }
+                body .ui-fileupload .ui-fileupload-content {
+                display: block;
+                }
+                .ui-button, .ui-button span, button.ui-button.ui-state-default span, .ui-button.ui-state-default span{
+                font-weight: normal !important;
+                }
+            </h:outputStylesheet>-->
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="card  card-default">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group form-group-default required ">
+                                        <label>Hizmetler</label>
+                                        <h:selectOneMenu id="hizmetSec" value="#{talepGirisBean.seciliHizmet}" styleClass="form-control" required="true"
+                                                         requiredMessage="Lütfen hizmet seçiniz" converter="hizmetConverter" >
+                                            <f:selectItems value="#{talepGirisBean.hizmetler}" var="hizmet" itemLabel="#{hizmet.hizmet_adi}" itemValue="#{hizmet}" />
+                                        </h:selectOneMenu>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group form-group-default required">
+                                        <label>Öncelik Durumu</label>
+                                        <p:outputPanel>
+                                            <h:selectOneMenu id="console" value="#{talepGirisBean.oncelik}" styleClass="form-control" required="true" requiredMessage="Lütfen öncelik seçiniz">
+                                                <f:selectItems value="#{talepGirisBean.oncelikler}" var="oncelikler" />
+                                            </h:selectOneMenu>
+                                        </p:outputPanel>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group form-group-default required">
+                                    <label>Konu</label>
+                                    <h:inputText styleClass="form-control" value="#{talepGirisBean.konu}" validator="#{validator.validateKonu}"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group form-group-default required">
+                                    <label>Mesaj</label>
+                                    <p:inputTextarea styleClass="form-control" value="#{talepGirisBean.mesaj}" rows="10" />
+                                </div>
+                            </div>
+                            <p:commandButton value="Dosya Yükle" style="cursor:pointer" styleClass="pull-left" onclick="document.querySelector('.fileUploadBtn input').click()" icon="fa fa-plus">
+                                </p:commandButton>
+                            <p:fileUpload  style="display:none" styleClass="fileUploadBtn" id="fileUploadBtn" uploadLabel="Yükle" label="Dosya Ekle" fileUploadListener="#{talepGirisBean.handle}" multiple="true"
+                                           mode="advanced" auto="true" oncomplete=" PF('yukle').enable()" update="secilenDosyalar"/>
+                            <p:commandButton actionListener="#{talepGirisBean.kaydet}" icon="fa fa-save" styleClass="pull-right" value="Kaydet" />
+                            <p:outputPanel id="secilenDosyalar">
+                            </p:outputPanel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>

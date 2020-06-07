@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Müşteri Destek</title>
+        </f:facet>
+        <f:facet name="middle">
+            <h:outputStylesheet name="pages/css/bootstrap.min.css" />
+            <h:outputStylesheet name="pages/css/login/pages.css" />
+            <h:outputStylesheet name="pages/css/login/style.css" />
+            <h:outputStylesheet name="pages/css/login/login.css" />
+            <h:outputStylesheet name="pages/css/login/waves.css" />
+        </f:facet>
+        <f:facet name="last">
+            <h:outputScript name="pages/js/feather.min.js" />
+            <h:outputScript name="pages/js/pace.min.js" />
+            <h:outputScript name="pages/js/modernizr.custom.js" />
+        </f:facet>
+    </h:head>
+    <h:body styleClass="theme1  fixed-header ">
+        <f:view contentType="text/html; charset=UTF-8">
+            <!--action="LoginServlet" method="post"-->
+            <h:form  id="loginForm" class="login-form" >
+                <div class="login-block">
+                    <div class="container-fluid">
+                        <div class="col-sm-12">
+
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center txt-primary">Müşteri Destek</h3>
+                                        </div>
+                                    </div>
+                                    <p class="text-muted text-center p-b-5">Oturum Aç</p>
+
+                                    <div class="form-group form-group-default">
+                                        <label>Kullanıcı Adı</label>
+                                        <div class="controls">
+                                            <h:inputText styleClass="form-control" value="#{loginBean.kullaniciAdi}" autocomplete="off" id="kullaniciAdi" required="true" requiredMessage="Email adresi giriniz." />
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-group-default">
+                                        <label>Şifre</label>
+                                        <div class="controls">
+                                            <h:inputSecret styleClass="form-control" value="#{loginBean.password}" autocomplete="off" required="true" requiredMessage="Şifre giriniz." />
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-15">
+                                        <div class="col-md-12">
+                                            <h:commandButton actionListener="#{loginBean.doLogin()}" value="GİRİŞ" styleClass=" btn btn-primary btn-md btn-block waves-effect text-center m-b-20" style="background-color: #08264d;" />
+                                            <h:inputHidden value="#{loginBean.originalURL}"></h:inputHidden>
+                                        </div>
+                                    </div>
+                                    <div class="forgot-phone text-center">
+                                        <a href="#{request.contextPath}/uyeOl.xhtml"> <b>Kayıt Ol </b></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p:growl id="growl" sticky="true" life="10000" redisplay="false" widgetVar="growlWgt" showDetail="true">
+                        <p:autoUpdate></p:autoUpdate>
+                    </p:growl>
+                </div>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
