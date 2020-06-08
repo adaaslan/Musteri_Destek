@@ -24,7 +24,14 @@ CRUD işlemlerinin hepsi yapıldı
 
 many to many ve one to many ilişkisi: yapıldı
 ***birçok müşteri birden fazla destek girebilir, bir admin(çalışan) birden çok ürüne destek verebilir. 
-(1-n : çalışan talep & n-n :müşteri-destek)
+(1-n : çalışan talep & n-n :müşteri-destek) 
+1 müşteri n tane hizmet alıp talep girebilir
+1 hizmet de n tane müşteri tarafından alınabilir
+many to many
+1 çalışan sadece 1 tane hizmetle eşleşebilir yani 1 kişi sadece bip'in uzmanı olabilir
+ama bipin uzmanı olan 2 kişi de olabilir
+1 hizmet 1den fazla çalışanla eşleşebilir
+yani one - many
 
 Minimum 1 adet Filter kullanılması: yapıldı (talepler - hizmet)
 
